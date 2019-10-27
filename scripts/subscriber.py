@@ -3,8 +3,11 @@ import rospy
 from performance_test.msg import SuperAwesome
 
 def callback(msg):
-    rospy.loginfo(rospy.get_caller_id() + "Received message: %s", msg.content)
-    
+    subscriber_time = int(str(rospy.Time.now())[:10])
+    publisher_time = int(msg.content[:10])
+    diff = subscriber_time - publisher_time
+    rospy.loginfo("py_subscriber time diff: %s ms\n", diff)
+
 def subscriber():
     rospy.init_node("python_subscriber", anonymous=True)
 
