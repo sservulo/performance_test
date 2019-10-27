@@ -129,12 +129,12 @@ include_directories(
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(
-  publisher_node
+  cpp_publisher
   src/publisher.cpp
 )
 
 add_executable(
-  subscriber_node
+  cpp_subscriber
   src/subscriber.cpp
 )
 
@@ -149,11 +149,11 @@ add_executable(
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(publisher_node
+target_link_libraries(cpp_publisher
   ${catkin_LIBRARIES}
 )
 
-target_link_libraries(subscriber_node
+target_link_libraries(cpp_subscriber
   ${catkin_LIBRARIES}
 )
 

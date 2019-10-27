@@ -1,0 +1,12 @@
+<launch>
+    <param name="publish_rate" type="int" value="10" />
+    <arg name="pub" value="cpp" /> <!-- Publisher types: cpp, py -->
+	<arg name="sub" value="cpp" /> <!-- Subscriber types: cpp, py, both -->
+
+	<node name="cpp_publisher" pkg="performance_test" type="cpp_publisher" if="$(eval pub == 'cpp')" />
+	<node name="py_publisher" pkg="performance_test" type="publisher.py" if="$(eval pub == 'py')" />
+	
+	<node name="cpp_subscriber" pkg="performance_test" type="cpp_subscriber" output="screen" if="$(eval sub != 'py')" />
+	<node name="py_subscriber" pkg="performance_test" type="subscriber.py" output="screen" if="$(eval sub != 'cpp')" />	  
+</launch> 
+ 
