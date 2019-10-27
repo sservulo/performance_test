@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
     // Creates new SuperAwesome message
     performance_test::SuperAwesome msg;
     // Since SuperAwesome is only allowed to contain string, use to send time at message creation
-    msg.content = std::to_string(ros::Time::now().toSec());
+    msg.content = std::to_string(ros::Time::now().toNSec());
     publisher.publish(msg);
 
     ros::spinOnce();

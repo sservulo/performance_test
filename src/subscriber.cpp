@@ -7,12 +7,13 @@
 */
 void callback(const performance_test::SuperAwesome::ConstPtr& msg) {
     // Extracts timestamps from publisher at the time the message was created and when it is read
-    int subscriber_time = std::stoi(std::to_string(ros::Time::now().toSec()).substr(0,10));
-    int publisher_time = std::stoi(msg->content.substr(0,10));
+    double subscriber_time = std::stod(std::to_string(ros::Time::now().toNSec()).substr(0,13));
+    double publisher_time = std::stod(msg->content.substr(0,13));
     // Calculate diff (in ms)
-    int diff = subscriber_time - publisher_time;
+    double diff = subscriber_time - publisher_time;
     // Print time diff between pub/sub
-    ROS_INFO("cpp_subscriber time diff: %i ms\n", diff);
+    ROS_INFO("cpp_subscriber time diff: %lf ms\n", diff);
+    if(diff >= 10) { throw; }
 }
 
 int main(int argc, char **argv) {

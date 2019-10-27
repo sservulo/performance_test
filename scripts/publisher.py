@@ -19,12 +19,11 @@ def publisher():
         msg = SuperAwesome()
         # Since SuperAwesome is only allowed to contain string, use to send time at message creation
         msg.content = str(rospy.Time.now())
-        rospy.loginfo(msg)
         pub.publish(msg)
 
         # Check latest rate param and update if different
-        if(rate_param != rospy.get_param("/rate_param")):
-            rate_param = rospy.get_param("/rate_param")
+        if(rate_param != rospy.get_param("/publish_rate")):
+            rate_param = rospy.get_param("/publish_rate")
             rate = rospy.Rate(rate_param)
 
         # Sleep thread until next loop
