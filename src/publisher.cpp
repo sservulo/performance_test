@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
   ros::init(argc, argv, "cpp_publisher");
 
   ros::NodeHandle n;
-  ros::Publisher publisher = n.advertise<performance_test::SuperAwesome>("performance_test", 1000);
+  ros::Publisher publisher = n.advertise<performance_test::SuperAwesome>("performance_test", 100000);
 
   // Sets rate from param
   int rate_param = kPublishRate;

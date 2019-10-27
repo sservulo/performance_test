@@ -10,7 +10,7 @@ def publisher():
     # Node, handler and publisher init
     rospy.init_node("python_publisher", anonymous=True)
 
-    pub = rospy.Publisher("performance_test", SuperAwesome, queue_size = 1000)
+    pub = rospy.Publisher("performance_test", SuperAwesome, queue_size = 100000)
     
     rate_param = rospy.get_param("/publish_rate")
     rate = rospy.Rate(rate_param)
