@@ -14,9 +14,6 @@ def callback(msg):
     diff = subscriber_time - publisher_time
     # Print time diff between pub/sub
     rospy.loginfo("py_subscriber time diff: %s ms\n", diff)
-    if(diff >= 10):
-        raise Exception
-        quit()
 
 def subscriber():
     # Node, handler and subscriber init

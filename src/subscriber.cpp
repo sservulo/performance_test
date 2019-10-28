@@ -13,7 +13,6 @@ void callback(const performance_test::SuperAwesome::ConstPtr& msg) {
     double diff = subscriber_time - publisher_time;
     // Print time diff between pub/sub
     ROS_INFO("cpp_subscriber time diff: %lf ms\n", diff);
-    if(diff >= 10) { throw; }
 }
 
 int main(int argc, char **argv) {

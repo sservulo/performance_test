@@ -80,7 +80,7 @@ To calculate the time offset between publisher/subscriber, once a message is rec
 
 ## Results
 
-For practical results of "limits in which rates don't coincide with real life" and to avoid interference of CPU scheduling or context switch, a threshold of 10 ms was established: if the time differente between the two timestamps was greater than 10 ms and the difference remained for at least two readings the criteria was achieved. Publish rates (Hz) in the range [10, 100] (step 10), [100, 10000] (step 100) and [1000, 10000000000[ (step 10^n) were used. The lowest frequency to meet the criteria is shown below.
+For practical results of "limits in which rates don't coincide with real life" and to avoid interference of CPU scheduling or context switch, a threshold of 10 ms was established: if the time differente between the two timestamps was greater than 10 ms and the difference remained for at least two readings the criteria was achieved. Publish rates (Hz) in the range [10, 100] (step 10), [100, 10000] (step 50) and [1000, 10000000000[ (step 10^n) were used. The lowest frequency to meet the criteria is shown below.
 
 ### Test environment
 
