@@ -39,7 +39,7 @@ $ roslaunch performance_test performance_test.launch pub:=cpp sub:=py
 $ roslaunch performance_test performance_test.launch pub:=cpp sub:=both
 ```
 
-Additionally to settip up the nodes, the launch script initializes the param `publish_rate` (default: 10).
+Additionally to set up the nodes, the launch script initializes the param `publish_rate` (default: 10).
 
 ### Running manually
 
